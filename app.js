@@ -12,10 +12,10 @@ app.use(cors());
 // 日志
 app.use(morgan('dev'));
 //处理静态资源
-app.use(express.static(path.resolve(__dirname, 'build')));
+app.use(express.static(path.resolve(__dirname, 'dist')));
 
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'))
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'))
 })
 
 //app.use('/api/v1', router);
